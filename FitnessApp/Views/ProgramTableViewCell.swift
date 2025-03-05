@@ -1,10 +1,3 @@
-//
-//  ProgramTableViewCell.swift
-//  FitnessApp
-//
-//  Created by Станислав Витальевич on 04.03.2025.
-//
-
 import UIKit
 
 class ProgramTableViewCell: UITableViewCell {
@@ -66,7 +59,7 @@ class ProgramTableViewCell: UITableViewCell {
             print("Image loaded successfully: \(program.image)")
         } else {
             print("Image not found: \(program.image)")
-            programImageView.image = nil // Или установить изображение по умолчанию
+            programImageView.image = nil
         }
     }
 }

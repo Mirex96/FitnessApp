@@ -1,24 +1,164 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Dashboard View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="DashboardViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="H5F-WK-Kzn">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="H5F-WK-Kzn" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="76M-jf-2B0"/>
+                            <constraint firstItem="H5F-WK-Kzn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="SoD-R7-e9e"/>
+                            <constraint firstItem="H5F-WK-Kzn" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="YE7-y2-Opt"/>
+                            <constraint firstItem="H5F-WK-Kzn" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="aOp-Zb-p76"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="H5F-WK-Kzn" id="XN8-D6-ds0"/>
+                        <segue destination="kXK-ir-MeU" kind="presentation" identifier="WorkoutSegue" id="wba-jS-HD6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="112.21374045801527" y="-2.1126760563380285"/>
+        </scene>
+        <!--Workout View Controller-->
+        <scene sceneID="fat-pV-9h6">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="kXK-ir-MeU" customClass="WorkoutViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MzF-t1-0oC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0mm-Ph-6Np" customClass="RingView" customModule="FitnessApp" customModuleProvider="target">
+                                <rect key="frame" x="20" y="249.66666666666663" width="353" height="353"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Byw-ut-EOh" customClass="LottieAnimationView" customModule="Lottie">
+                                        <rect key="frame" x="101.66666666666669" y="101.33333333333334" width="150" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="NnM-u3-V2b"/>
+                                            <constraint firstAttribute="width" constant="150" id="Yvg-Ng-oaw"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="Byw-ut-EOh" firstAttribute="centerX" secondItem="0mm-Ph-6Np" secondAttribute="centerX" id="7U2-oQ-vor"/>
+                                    <constraint firstAttribute="width" secondItem="0mm-Ph-6Np" secondAttribute="height" id="cJz-af-x4f"/>
+                                    <constraint firstItem="Byw-ut-EOh" firstAttribute="centerY" secondItem="0mm-Ph-6Np" secondAttribute="centerY" id="nlL-76-WfN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Pcz-Pi-bFq"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="0mm-Ph-6Np" firstAttribute="centerY" secondItem="MzF-t1-0oC" secondAttribute="centerY" id="RWO-uW-4NU"/>
+                            <constraint firstItem="0mm-Ph-6Np" firstAttribute="leading" secondItem="Pcz-Pi-bFq" secondAttribute="leading" constant="20" id="TE2-Oq-wgs"/>
+                            <constraint firstItem="Pcz-Pi-bFq" firstAttribute="trailing" secondItem="0mm-Ph-6Np" secondAttribute="trailing" constant="20" id="TvK-sg-EoR"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="animationView" destination="Byw-ut-EOh" id="P34-eY-uRQ"/>
+                        <outlet property="ringView" destination="0mm-Ph-6Np" id="0kp-DB-077"/>
+                        <segue destination="dW9-bI-ech" kind="presentation" identifier="WorkoutResultsSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="Pdd-z0-cR2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pqr-kY-LHf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="995" y="-2"/>
+        </scene>
+        <!--Workout Results View Controller-->
+        <scene sceneID="5fg-vj-c9f">
+            <objects>
+                <viewController id="dW9-bI-ech" customClass="WorkoutResultsViewController" customModule="FitnessApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9ls-GX-lpw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OPH-gq-WJH">
+                                <rect key="frame" x="25" y="291" width="343" height="270"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcL-Zi-sfK" customClass="LottieAnimationView" customModule="Lottie">
+                                        <rect key="frame" x="131.66666666666666" y="30" width="80" height="80"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="vxe-5l-mFS"/>
+                                            <constraint firstAttribute="width" constant="80" id="xLW-5O-gEV"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Congratulations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IWb-4x-pZy">
+                                        <rect key="frame" x="111" y="135" width="121" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UQS-6M-hKZ" customClass="ShadowButton" customModule="FitnessApp" customModuleProvider="target">
+                                        <rect key="frame" x="25" y="186" width="293" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="pDt-pd-OhU"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Button"/>
+                                        <connections>
+                                            <action selector="submitButtonTapped:" destination="dW9-bI-ech" eventType="touchUpInside" id="f8P-ZT-oEB"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="IWb-4x-pZy" firstAttribute="centerX" secondItem="OPH-gq-WJH" secondAttribute="centerX" id="CyP-Xq-hFL"/>
+                                    <constraint firstItem="UQS-6M-hKZ" firstAttribute="leading" secondItem="OPH-gq-WJH" secondAttribute="leading" constant="25" id="Fe8-34-9Ai"/>
+                                    <constraint firstAttribute="height" constant="270" id="H4R-g0-Y1k"/>
+                                    <constraint firstItem="fcL-Zi-sfK" firstAttribute="top" secondItem="OPH-gq-WJH" secondAttribute="top" constant="30" id="P3s-Mg-Us7"/>
+                                    <constraint firstItem="fcL-Zi-sfK" firstAttribute="centerX" secondItem="OPH-gq-WJH" secondAttribute="centerX" id="XGy-10-SAt"/>
+                                    <constraint firstItem="UQS-6M-hKZ" firstAttribute="top" secondItem="IWb-4x-pZy" secondAttribute="bottom" constant="30" id="lCF-74-O32"/>
+                                    <constraint firstItem="IWb-4x-pZy" firstAttribute="top" secondItem="fcL-Zi-sfK" secondAttribute="bottom" constant="25" id="nAO-Sf-qsJ"/>
+                                    <constraint firstAttribute="trailing" secondItem="UQS-6M-hKZ" secondAttribute="trailing" constant="25" id="qBB-TH-Foa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8zy-C3-PPC"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.69842155612244894" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="OPH-gq-WJH" firstAttribute="centerY" secondItem="9ls-GX-lpw" secondAttribute="centerY" id="GoM-Aa-TQ5"/>
+                            <constraint firstItem="8zy-C3-PPC" firstAttribute="trailing" secondItem="OPH-gq-WJH" secondAttribute="trailing" constant="25" id="Pok-cN-1iZ"/>
+                            <constraint firstItem="OPH-gq-WJH" firstAttribute="centerX" secondItem="9ls-GX-lpw" secondAttribute="centerX" id="X1H-Xm-Ll3"/>
+                            <constraint firstItem="OPH-gq-WJH" firstAttribute="leading" secondItem="8zy-C3-PPC" secondAttribute="leading" constant="25" id="iSu-ST-qO6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="congratulationsLabel" destination="IWb-4x-pZy" id="Efx-Bx-7gd"/>
+                        <outlet property="resultsView" destination="OPH-gq-WJH" id="5pn-AT-8u9"/>
+                        <outlet property="submitButton" destination="UQS-6M-hKZ" id="BRq-su-Uiw"/>
+                        <outlet property="trophyAnimationView" destination="fcL-Zi-sfK" id="tdK-5Q-dQM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ES6-B7-vzO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1918" y="-2"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

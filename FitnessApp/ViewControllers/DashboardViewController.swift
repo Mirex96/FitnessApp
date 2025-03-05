@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  FitnessApp
-//
-//  Created by Станислав Витальевич on 04.03.2025.
-//
-
 import UIKit
 
 class DashboardViewController: UIViewController {
-    
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -33,10 +25,7 @@ class DashboardViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "ProgramTableViewCell", bundle: nil), forCellReuseIdentifier: ProgramTableViewCell.identifier)
         tableView.separatorStyle = .none // убираем строки между нашими режимами тренировок
-        
-        
     }
-    
 }
 
 //MARK: - TavleView DataSource

@@ -1,16 +1,8 @@
-//
-//  WorkoutResultsViewController.swift
-//  FitnessApp
-//
-//  Created by Станислав Витальевич on 05.03.2025.
-//
-
 import UIKit
 import Lottie
 
 class WorkoutResultsViewController: UIViewController {
 
-    
     @IBOutlet weak var resultsView: UIView!
     @IBOutlet weak var congratulationsLabel: UILabel!
     @IBOutlet weak var submitButton: ShadowButton!
@@ -47,5 +39,4 @@ class WorkoutResultsViewController: UIViewController {
             self.workoutDelegate?.dismissWorkout()  // Закрываем предыдущий Controller 
         }
     }
-    
 }
